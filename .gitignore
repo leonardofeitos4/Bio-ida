@@ -1,0 +1,17 @@
+
+# Vídeos (nunca subir mídia pesada no Git)
+*.mp4
+*.mov
+*.webm
+*.mkv
+*.avi
+*.m4v
+
+# Arquivos de câmera
+*.prores
+*.hevc
+*.h265
+
+# Cache / temporários
+Thumbs.db
+.DS_Store
