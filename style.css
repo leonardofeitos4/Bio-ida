@@ -81,6 +81,15 @@ body {
   background: #000; /* fallback para carregamento */
 }
 
+.cover video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-position: center;
+  background:#000;
+}
+
 .cover-video {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -107,14 +116,23 @@ body {
   /* Suaviza overlay para não perder nitidez */
   mix-blend-mode: multiply;
 }
-
-/* Responsivo para telas menores */
-@media (max-width: 600px) {
-  .cover {
-    height: 200px;
+/* DESKTOP */
+@media (min-width:601px){
+  .cover video{
+    object-fit: cover;        /* mantém estética premium */
+    transform: scale(1);   /* reduz o zoom exagerado */
   }
-  .cover-video {
-    height: 200px;
+}
+
+/* MOBILE */
+@media (max-width:600px){
+  .cover{
+    height: 220px;
+  }
+
+  .cover video{
+    object-fit: contain;      /* elimina zoom */
+    transform: scale(1);      /* sem aproximação */
   }
 }
 
@@ -250,19 +268,42 @@ body {
 
 
 /* ===== VIDEO ===== */
-.video-box {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
+/* ===== VIDEO (CORREÇÃO MOBILE PROFISSIONAL) ===== */
+
+/* ===== VIDEO FINAL CORRIGIDO ===== */
+
+.video-box{
+  width:100%;
+  max-width:420px;
+  margin:28px auto;
+  border-radius:22px;
+  overflow:hidden;
+  background:#000;
+  box-shadow:0 14px 30px rgba(0,0,0,.28);
 }
 
-.video-box video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center center;
+.video-box video{
+  width:100%;
+  display:block;
+  aspect-ratio: 16/9;
+  object-fit: contain;     /* <-- elimina o zoom */
 }
+
+/* MOBILE */
+@media(max-width:600px){
+  .video-box{
+    max-width:100%;
+    margin:22px auto;
+    border-radius:18px;
+  }
+
+  .video-box video{
+    aspect-ratio: 9/16;    /* vertical elegante */
+    object-fit: contain;
+    background:#000;
+  }
+}
+
 
 
 /* ===== ENDEREÇO PREMIUM ===== */
