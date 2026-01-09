@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Instituto Danielle Azevedo</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<body>
+
+  <!-- TOPO COM IMAGEM -->
+  <header class="cover">
+    <div class="overlay"></div>
+  </header>
+
+  <!-- FUNDO DA PÁGINA -->
+  <main class="page-bg">
+    <div class="container">
+
+      <!-- PERFIL -->
+      <section class="profile">
+        <img src="assets/dani1.jpeg" alt="Fraternidade">
+        <h1>Instituto Danielle Azevedo</h1>
+        <p>Ressignificando vidas e relacionamentos</p>
+      </section>
+
+      <!-- VÍDEO 
+      <section class="video-box">
+        <video controls playsinline preload="metadata">
+          <source src="assets/video.mp4" type="video/mp4">
+          Seu navegador não suporta vídeo.
+        </video>
+      </section>
+-->
+      <!-- LINKS -->
+      <section class="cards">
+
+  <a href="https://wa.me/558387451878?text=Olá! Quero Marcar um atendimento." class="card card-encontro">
+    <div class="card-overlay">
+      <h2>Entre em contato</h2>
+      <span>Acesse agora</span>
+    </div>
+  </a>
+
+
+  <a href="https://www.youtube.com/@institutodanielleazevedo" class="card card-youtube">
+    <div class="card-overlay">
+      <h2>YouTube</h2>
+      <span>Acesse agora</span>
+    </div>
+  </a>
+
+  <a href="https://open.spotify.com/show/2rlnQZmivnrW5enbPGrXPw?si=fs7QISBpTICTZr9y9cvMCg" class="card card-tiktok">
+    <div class="card-overlay">
+      <h2>Papo Vida Podcast</h2>
+      <span>Acesse agora</span>
+    </div>
+  </a>
+
+
+</section>
+
+
+      <!-- PIX 
+      <div class="pix">
+        <img src="assets/pix.jpeg" alt="PIX">
+        
+      </div>-->
+      <div class="horarios-premium">
+
+  <div class="icone-horario">
+    ⏰
+  </div>
+
+  <h2>Horários</h2>
+  <span class="subtitulo">DE FUNCIONAMENTO</span>
+
+  <div class="card-horario">
+
+    <div class="linha">
+      <b>SEGUNDA A SEXTA</b>
+      <span>08H ÀS 18H</span>
+    </div>
+
+    <div class="linha">
+      <b>SÁBADO</b>
+      <span>08H ÀS 12H</span>
+    </div>
+
+    <div class="linha fechado">
+      <b>DOMINGO</b>
+      <span>FECHADO</span>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+      <!-- MAPA -->
+<section class="map-section">
+  <h2 class="titulo-endereco">Nosso Endereço</h2>
+
+  <div class="map-box">
+    <h3>📍 IDA – Instituto Danielle Azevedo</h3>
+    <div id="map-ida" class="map"></div>
+    <p>Av. Juarez Távora, 522 – Torre, João Pessoa/PB</p>
+  </div>
+</section>
+
+
+<footer>
+  © Instituto Danielle Azevedo
+</footer>
+
+   </div>
+  </main>
+
+  <!-- GOOGLE MAPS SCRIPT -->
+  <script>
+function initMap() {
+
+  const ida = { lat: -7.1185229, lng: -34.8570514 };
+
+  const mapIDA = new google.maps.Map(
+    document.getElementById("map-ida"),
+    {
+      zoom: 17,
+      center: ida,
+    }
+  );
+
+  new google.maps.Marker({
+    position: ida,
+    map: mapIDA,
+    title: "IDA – Instituto Danielle Azevedo",
+  });
+}
+</script>
+
+
+  <script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8JGyempUB4eN9AikVugjykJZNMzD8TL8&callback=initMap"
+  async
+  defer
+></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<a href="https://wa.me/558387451878?text=Olá! Vim pelo seu site."
+   class="whatsapp-float"
+   target="_blank"
+   aria-label="WhatsApp">
+   <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+
+
+
+
+</body>
+</html>
