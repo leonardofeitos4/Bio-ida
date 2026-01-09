@@ -69,43 +69,29 @@ body {
 
 /* ===== CAPA COM VÍDEO ===== */
 
-.cover {
-   width: 100%;
-  max-width: 100%;
-  overflow: hidden;
-  height: 340px;
+.cover{
   position: relative;
+  width: 100%;
+  height: 340px;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #000; /* fallback para carregamento */
+  
 }
 
-.cover video{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-position: center;
-  background:#000;
-}
 
-.cover-video {
+.cover video,
+.cover-video{
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  width: 100vw;
+  inset: 0;
+  width: 100%;
   height: 100%;
-  max-width: 100%;
-  left: 0;
   object-fit: cover;
   object-position: center;
-  z-index: 0;
   pointer-events: none;
-  transition: filter 0.3s;
-  image-rendering: auto;
-  backface-visibility: hidden;
-  will-change: transform;
 }
+
 
 .cover .overlay {
   position: absolute;
@@ -116,11 +102,15 @@ body {
   /* Suaviza overlay para não perder nitidez */
   mix-blend-mode: multiply;
 }
+
+
 /* DESKTOP */
 @media (min-width:601px){
   .cover video{
     object-fit: cover;        /* mantém estética premium */
-    transform: scale();   /* reduz o zoom exagerado */
+    transform: none;          /* sem escala para evitar bordas pretas */
+    min-width: 100%;
+    min-height: 100%;
   }
 }
 
@@ -131,8 +121,11 @@ body {
   }
 
   .cover video{
-    object-fit: contain;      /* elimina zoom */
-    transform: scale(1);      /* sem aproximação */
+    object-fit: cover;      /* preencher sem barras pretas */
+    transform: none;
+    object-position: top center; /* priorizar topo em telas pequenas */
+    min-width: 100%;
+    min-height: 100%;
   }
 }
 
