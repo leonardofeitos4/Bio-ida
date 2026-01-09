@@ -8,23 +8,28 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 <body>
-
-  <!-- TOPO COM IMAGEM -->
-  <header class="cover">
-    <div class="overlay"></div>
-  </header>
-
   <!-- FUNDO DA PÁGINA -->
   <main class="page-bg">
-    <div class="container">
+    <!-- Bloco do vídeo de fundo -->
+    <div class="cover">
+      <video class="cover-video" autoplay muted loop playsinline>
+        <source src="assets/video-entrada.MOV" type="video/mp4">
+        Seu navegador não suporta vídeo.
+      </video>
+      <div class="overlay"></div>
+    </div>
 
+    <div class="container">
       <!-- PERFIL -->
       <section class="profile">
         <img src="assets/dani1.jpeg" alt="Fraternidade">
         <h1>Instituto Danielle Azevedo</h1>
         <p>Ressignificando vidas e relacionamentos</p>
       </section>
+      
+
 
       <!-- VÍDEO 
       <section class="video-box">
@@ -37,7 +42,7 @@
       <!-- LINKS -->
       <section class="cards">
 
-  <a href="https://wa.me/558387451878?text=Olá! Quero Marcar um atendimento." class="card card-encontro">
+  <a href="https://wa.me/558387451878?text=Olá! Quero Marcar um atendimento." class="card card-numero">
     <div class="card-overlay">
       <h2>Entre em contato</h2>
       <span>Acesse agora</span>
@@ -52,64 +57,62 @@
     </div>
   </a>
 
-  <a href="https://open.spotify.com/show/2rlnQZmivnrW5enbPGrXPw?si=fs7QISBpTICTZr9y9cvMCg" class="card card-tiktok">
+  <a href="https://open.spotify.com/show/2rlnQZmivnrW5enbPGrXPw?si=fs7QISBpTICTZr9y9cvMCg" class="card card-papovida">
     <div class="card-overlay">
       <h2>Papo Vida Podcast</h2>
       <span>Acesse agora</span>
     </div>
   </a>
-
-
-</section>
-
-
-      <!-- PIX 
-      <div class="pix">
-        <img src="assets/pix.jpeg" alt="PIX">
-        
-      </div>-->
-      <div class="horarios-premium">
-
-  <div class="icone-horario">
-    ⏰
-  </div>
-
-  <h2>Horários</h2>
-  <span class="subtitulo">DE FUNCIONAMENTO</span>
-
-  <div class="card-horario">
-
-    <div class="linha">
-      <b>SEGUNDA A SEXTA</b>
-      <span>08H ÀS 18H</span>
+  <a href="https://www.instagram.com/institutodanielleazevedo/" class="card card-instagram">
+    <div class="card-overlay">
+      <h2>Instagram</h2>
+      <span>Acesse agora</span>
     </div>
+  </a>
 
-    <div class="linha">
-      <b>SÁBADO</b>
-      <span>08H ÀS 12H</span>
-    </div>
-
-    <div class="linha fechado">
-      <b>DOMINGO</b>
-      <span>FECHADO</span>
-    </div>
-
-  </div>
-
+<div class="card-horario">
+  <img src="/assets/horario.svg" class="img-horario" alt="Horários de Funcionamento">
 </div>
 
-
+</section>
 
       <!-- MAPA -->
+
+
 <section class="map-section">
-  <h2 class="titulo-endereco">Nosso Endereço</h2>
+  <h2 class="titulo-endereco">
+    <i class="fa fa-map-marker-alt"></i> Nosso Endereço
+  </h2>
 
   <div class="map-box">
-    <h3>📍 IDA – Instituto Danielle Azevedo</h3>
-    <div id="map-ida" class="map"></div>
-    <p>Av. Juarez Távora, 522 – Torre, João Pessoa/PB</p>
+    <h3>IDA – Instituto Danielle Azevedo</h3>
+
+    <div class="map">
+      <iframe
+        src="https://www.google.com/maps?q=IDA+-+Instituto+Danielle+Azevedo,+Jo%C3%A3o+Pessoa+-+PB&output=embed"
+        width="100%"
+        height="100%"
+        style="border:0;"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+    <p>
+      Rua Pará, 136 – Sala 103 – Estados, João Pessoa – PB, 58030-202<br>
+
+      <a class="map-link"
+         href="https://www.google.com/maps/place/IDA+-+Instituto+Danielle+Azevedo/@-7.1185229,-34.8570514,17z"
+         target="_blank">
+        Ver no Google Maps <i class="fa fa-external-link-alt"></i>
+      </a>
+    </p>
   </div>
 </section>
+
+
+
 
 
 <footer>
