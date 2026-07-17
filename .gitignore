@@ -15,3 +15,6 @@
 # Cache / temporários
 Thumbs.db
 .DS_Store
+
+# Excecao: video das salas otimizado para o site (34 MB, dentro do limite do GitHub)
+!salas/videodanisalas.mp4

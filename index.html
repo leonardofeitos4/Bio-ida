@@ -7,8 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Instituto Danielle Azevedo</title>
 
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/logoo.png">
+  <link rel="apple-touch-icon" href="assets/logoo.png">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/chat.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <meta name="description" content="Instituto Danielle Azevedo – Clínica de terapias e desenvolvimento emocional em João Pessoa. Atendimento presencial e online.">
   <meta name="robots" content="index, follow">
@@ -32,9 +36,13 @@
     <div class="container">
       <!-- PERFIL -->
       <section class="profile">
-        <img src="assets/dani1.jpeg" alt="Fraternidade">
+        <img src="assets/dani1.jpeg" alt="Danielle Azevedo – Psicóloga">
         <h1>Instituto Danielle Azevedo</h1>
         <p>Ressignificando vidas e relacionamentos</p>
+      </section>
+
+      <section class="frase-acolhimento">
+        <p>“Um espaço de acolhimento, escuta e cuidado com a sua história.”</p>
       </section>
       
 
@@ -78,8 +86,21 @@
     </div>
   </a>
 
+  <a href="salas/index.html" class="card card-salas card-destaque">
+    <span class="destaque-ribbon"><i class="fa fa-star"></i> Para profissionais</span>
+    <div class="card-overlay">
+      <h2>Alugue sua Sala</h2>
+      <p class="destaque-sub">Salas mobiliadas e climatizadas no Bairro dos Estados</p>
+      <div class="destaque-chips">
+        <span>R$ 30 · hora</span>
+        <span>R$ 250 · turno</span>
+      </div>
+      <span>Conhecer as salas</span>
+    </div>
+  </a>
+
 <div class="card-horario">
-  <img src="/assets/horario.svg" class="img-horario" alt="Horários de Funcionamento">
+  <img src="assets/horario.svg" class="img-horario" alt="Horários de Funcionamento">
 </div>
 
 </section>
@@ -123,8 +144,11 @@
 
 
 
-<footer>
-  © Instituto Danielle Azevedo
+<footer class="site-footer">
+  <span class="footer-marca">© Instituto Danielle Azevedo</span>
+  <a class="footer-credit" href="https://www.instagram.com/evolvify.cloud/" target="_blank" rel="noopener">
+    Desenvolvido por <strong>Evolvify</strong> <i class="fa-brands fa-instagram"></i>
+  </a>
 </footer>
 
    </div>
@@ -168,7 +192,37 @@ function initMap() {
 </a>
 
 
+<!-- ════════ EVO · CHATBOT ════════ -->
+<button id="evo-launcher" class="evo-launcher" onclick="openEvo()" aria-label="Falar com a Evo">
+  <img src="assets/mascotes/mascotefeliz.svg" alt="Evo">
+  <span class="evo-badge">1</span>
+</button>
 
+<div id="evo-panel" class="evo-panel" role="dialog" aria-label="Chat com a Evo">
+  <div class="evo-head">
+    <div class="evo-head-ava">
+      <img src="assets/mascotes/mascoteapontando.svg" alt="Evo">
+    </div>
+    <div class="evo-head-info">
+      <div class="evo-head-name"><span class="evo-online-dot"></span>Evo</div>
+      <div class="evo-head-sub">Recepcionista digital · Online</div>
+    </div>
+    <button class="evo-close" onclick="closeEvo()" aria-label="Fechar">&times;</button>
+  </div>
+  <div class="evo-handoff">
+    <div class="evo-handoff-txt">Prefere falar com a equipe?</div>
+    <a class="evo-handoff-btn"
+       href="https://wa.me/5583987451878?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20falar%20com%20o%20Instituto."
+       target="_blank" rel="noopener">💬 WhatsApp</a>
+  </div>
+  <div class="chat-area" id="chat-area"></div>
+</div>
+
+<!-- Scripts do chatbot (ordem de dependência) -->
+<script src="js/chatbot/config.js"></script>
+<script src="js/chatbot/flows.js"></script>
+<script src="js/chatbot/engine.js"></script>
+<script src="js/script.js"></script>
 
 
 
