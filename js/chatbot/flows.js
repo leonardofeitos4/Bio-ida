@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════
-   FLOWS — Evo · Recepcionista Digital
+   FLOWS — Perolala · Recepcionista Digital
    Instituto Danielle Azevedo
 
    Estrutura de cada flow:
@@ -7,7 +7,8 @@
      msg: string (HTML permitido),
      chips: [
        { l: 'Label', f: 'flow_id' }              → navega para outro flow
-       { l: 'Label', wa: 'mensagem' }            → abre WhatsApp (atendimento)
+       { l: 'Label', wa: 'mensagem' }            → abre WhatsApp (atendimento);
+                                                   a mensagem recebe CONFIG.WA_PREFIX na frente
        { l: 'Label', wa: 'mensagem', num: 'NUM' }→ abre WhatsApp num número específico
        { l: 'Label', href: 'url' }               → abre um link (ex: página de salas)
      ]
@@ -84,7 +85,7 @@ const flows = {
   casal_terapia: {
     msg: `A terapia de casal abre um espaço de diálogo guiado, onde os dois são ouvidos e podem reconstruir a relação em bases mais saudáveis. 💑<br><br>Quer dar o próximo passo?`,
     chips: [
-      { l: '💬 Quero conversar', wa: 'Olá! Vim pelo site e tenho interesse em Terapia de Casal.' },
+      { l: '💬 Quero conversar', wa: 'tenho interesse em Terapia de Casal.' },
       { l: '💻 Como funciona online?', f: 'online' },
       { l: '🏙️ Presencial em JP', f: 'presencial' },
     ]
@@ -99,7 +100,7 @@ const flows = {
   casal_conflito: {
     msg: `Conflitos e ruídos de comunicação são muito comuns — e têm solução. 🗣️<br><br>Na terapia vocês desenvolvem formas mais saudáveis de se expressar e se entender.<br><br>Quer dar o próximo passo?`,
     chips: [
-      { l: '💬 Quero conversar', wa: 'Olá! Vim pelo site e quero ajuda com comunicação/conflitos no relacionamento.' },
+      { l: '💬 Quero conversar', wa: 'quero ajuda com comunicação/conflitos no relacionamento.' },
       { l: '💻 Online', f: 'online' },
       { l: '🏙️ Presencial em JP', f: 'presencial' },
     ]
@@ -149,28 +150,28 @@ const flows = {
   esp_neuro: {
     msg: `A avaliação neuropsicológica investiga memória, atenção, aprendizagem e funções cognitivas — útil em casos de TDAH, dificuldades de aprendizagem e outras questões. 🧩<br><br>Quer mais informações?`,
     chips: [
-      { l: '💬 Quero saber mais', wa: 'Olá! Vim pelo site e quero informações sobre Avaliação Neuropsicológica.' },
+      { l: '💬 Quero saber mais', wa: 'quero informações sobre Avaliação Neuropsicológica.' },
       { l: '↩ Outras opções', f: 'inicio' },
     ]
   },
   esp_psiquiatria: {
     msg: `O acompanhamento psiquiátrico cuida da saúde mental também na dimensão clínica, em parceria com a psicoterapia quando necessário. 💊<br><br>Quer mais informações?`,
     chips: [
-      { l: '💬 Quero saber mais', wa: 'Olá! Vim pelo site e quero informações sobre atendimento Psiquiátrico.' },
+      { l: '💬 Quero saber mais', wa: 'quero informações sobre atendimento Psiquiátrico.' },
       { l: '↩ Outras opções', f: 'inicio' },
     ]
   },
   esp_sexualidade: {
     msg: `A terapia voltada à sexualidade humana acolhe questões de intimidade, identidade e relacionamentos com respeito e sigilo. ❤️<br><br>Quer dar o próximo passo?`,
     chips: [
-      { l: '💬 Quero conversar', wa: 'Olá! Vim pelo site e quero informações sobre atendimento em Sexualidade Humana.' },
+      { l: '💬 Quero conversar', wa: 'quero informações sobre atendimento em Sexualidade Humana.' },
       { l: '↩ Outras opções', f: 'inicio' },
     ]
   },
   esp_outra: {
     msg: `O Instituto atende diversas demandas. O melhor caminho é nos contar um pouco da sua situação que a equipe te orienta sobre o atendimento ideal. 🔎`,
     chips: [
-      { l: '💬 Descrever minha situação', wa: 'Olá! Vim pelo site e quero entender qual atendimento é ideal pra mim.' },
+      { l: '💬 Descrever minha situação', wa: 'quero entender qual atendimento é ideal pra mim.' },
       { l: '↩ Menu principal', f: 'inicio' },
     ]
   },
@@ -180,7 +181,7 @@ const flows = {
     msg: `Temos salas para sublocação no <strong>Bairro dos Estados</strong>, em João Pessoa! 🏢<br><br>São ambientes acolhedores e preparados, ideais para <strong>Psicólogos e demais especialidades</strong>.<br><br>💰 <strong>Hora avulsa:</strong> R$ 30 — sem contrato de permanência<br>💰 <strong>Por turno:</strong> R$ 250 — contrato mínimo de 6 meses<br><br>O que você prefere?`,
     chips: [
       { l: '📄 Ver salas e fotos', href: 'salas/index.html' },
-      { l: '💬 Quero reservar', wa: 'Olá! Vim pelo site e tenho interesse em alugar uma sala no Instituto Danielle Azevedo.', num: '__SALAS__' },
+      { l: '💬 Quero reservar', wa: 'tenho interesse em alugar uma sala.', num: '__SALAS__' },
       { l: '↩ Menu principal', f: 'inicio' },
     ]
   },
@@ -189,14 +190,14 @@ const flows = {
   online: {
     msg: `💻 O atendimento online é completo e acolhedor — você é atendido(a) de onde estiver, com a mesma qualidade do presencial.<br><br>✅ Sessões por videochamada<br>✅ Sigilo e segurança<br>✅ Horários flexíveis<br><br>Quer agendar sua sessão online?`,
     chips: [
-      { l: '✅ Sim, quero agendar!', wa: 'Olá! Vim pelo site e quero agendar um atendimento ONLINE.' },
+      { l: '✅ Sim, quero agendar!', wa: 'quero agendar um atendimento ONLINE.' },
       { l: '↩ Menu principal', f: 'inicio' },
     ]
   },
   presencial: {
     msg: `🏙️ O atendimento presencial acontece no Instituto, em <strong>João Pessoa – PB</strong> (Rua Pará, 136 – Sala 103 – Estados).<br><br>Um ambiente acolhedor, preparado pra te receber com conforto e sigilo.<br><br>Quer agendar sua sessão presencial?`,
     chips: [
-      { l: '✅ Sim, quero agendar!', wa: 'Olá! Vim pelo site e quero agendar um atendimento PRESENCIAL em João Pessoa.' },
+      { l: '✅ Sim, quero agendar!', wa: 'quero agendar um atendimento PRESENCIAL em João Pessoa.' },
       { l: '↩ Menu principal', f: 'inicio' },
     ]
   },
@@ -205,8 +206,8 @@ const flows = {
   agendar: {
     msg: `Que ótimo! 😊 O Instituto atende <strong>online</strong> (de qualquer lugar) e <strong>presencial</strong> em João Pessoa. Como você prefere?`,
     chips: [
-      { l: '💻 Online', wa: 'Olá! Vim pelo site e quero agendar um atendimento ONLINE.' },
-      { l: '🏙️ Presencial em João Pessoa', wa: 'Olá! Vim pelo site e quero agendar um atendimento PRESENCIAL em João Pessoa.' },
+      { l: '💻 Online', wa: 'quero agendar um atendimento ONLINE.' },
+      { l: '🏙️ Presencial em João Pessoa', wa: 'quero agendar um atendimento PRESENCIAL em João Pessoa.' },
       { l: '🏢 Alugar uma sala', f: 'salas' },
     ]
   },

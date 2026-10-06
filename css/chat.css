@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════
-   EVO — Widget de Chat (Instituto Danielle Azevedo)
-   Mesmo estilo da Evo, tema dourado/IDA.
+   PEROLALA — Widget de Chat (Instituto Danielle Azevedo)
+   Widget da Perolala, tema dourado/IDA.
 ═══════════════════════════════════ */
 :root {
   --evo-gold: #a0783a;
@@ -12,6 +12,15 @@
   --evo-dim: #8a7f73;
   --evo-shadow: rgba(0,0,0,.16);
   --evo-wa: #25d366;
+}
+
+/* ── Marca "IDA" (no lugar do mascote) ── */
+.pero-p {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: .5px;
+  color: #fff;
 }
 
 /* ── Botão flutuante (launcher) ── */
@@ -35,11 +44,7 @@
   transition: transform .2s;
 }
 .evo-launcher:hover { transform: scale(1.06); }
-.evo-launcher img {
-  width: 46px;
-  height: 46px;
-  object-fit: contain;
-}
+.evo-launcher .pero-p { font-size: 19px; }
 .evo-launcher .evo-badge {
   position: absolute;
   top: -4px;
@@ -110,7 +115,7 @@
   justify-content: center;
   flex-shrink: 0;
 }
-.evo-head-ava img { width: 32px; height: 32px; object-fit: contain; }
+.evo-head-ava .pero-p { font-size: 14px; }
 .evo-head-info { flex: 1; line-height: 1.2; }
 .evo-head-name { font-weight: 600; font-size: 15px; display: flex; align-items: center; gap: 6px; }
 .evo-head-sub { font-size: 11px; opacity: .85; }
@@ -217,7 +222,17 @@
   gap: 5px;
 }
 .mlbl.u { justify-content: flex-end; }
-.mlbl-ava { width: 20px; height: 20px; object-fit: contain; }
+.mlbl-ava {
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #b98c47, #8a6630);
+  color: #fff;
+  font-size: 8px;
+  letter-spacing: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
 
 /* ── Indicador "digitando" ── */
 .typing-dot {
@@ -232,12 +247,10 @@
   width: max-content;
   animation: evoFade .28s ease both;
 }
-.typing-dot img { width: 30px; height: 30px; object-fit: contain; animation: evoBob 1s ease-in-out infinite; }
 .typing-dot span { width: 6px; height: 6px; background: var(--evo-gold); border-radius: 50%; animation: evoTd 1.2s infinite; }
-.typing-dot span:nth-child(3) { animation-delay: .2s; }
-.typing-dot span:nth-child(4) { animation-delay: .4s; }
+.typing-dot span:nth-child(2) { animation-delay: .2s; }
+.typing-dot span:nth-child(3) { animation-delay: .4s; }
 @keyframes evoTd { 0%,60%,100% { opacity: .3; transform: translateY(0); } 30% { opacity: 1; transform: translateY(-3px); } }
-@keyframes evoBob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
 
 /* ── Chips (respostas rápidas) ── */
 .inline-chips {
@@ -276,5 +289,5 @@
     border-radius: 22px 22px 0 0;
   }
   .evo-launcher { width: 56px; height: 56px; right: 16px; bottom: 90px; }
-  .evo-launcher img { width: 42px; height: 42px; }
+  .evo-launcher .pero-p { font-size: 17px; }
 }
