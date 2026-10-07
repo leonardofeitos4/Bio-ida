@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════
-   FLOWS — Perolala · Recepcionista Digital
+   FLOWS — Pereola · Recepcionista Digital
    Instituto Danielle Azevedo
 
    Estrutura de cada flow:

@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════
-   ALERTA DE INTERAÇÃO — Perolala
+   ALERTA DE INTERAÇÃO — Pereola
    Função serverless da Vercel: recebe cada interação do chatbot
    e manda um aviso no WhatsApp via CallMeBot (gratuito).
 
@@ -37,7 +37,7 @@ module.exports = async (req, res) => {
   });
 
   const texto =
-    `🤖 *Perolala* · visitante #${visitante}\n` +
+    `🤖 *Pereola* · visitante #${visitante}\n` +
     `${acao}\n` +
     `📍 ${cidade}${uf} · ${aparelho} · ${hora}`;
 

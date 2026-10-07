@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════
-   PEROLALA ENGINE — Motor do Chatbot
+   PEREOLA ENGINE — Motor do Chatbot
    Depende de: config.js, flows.js
 ═══════════════════════════════════ */
 
@@ -10,7 +10,7 @@ const visitante = Math.random().toString(36).slice(2, 6).toUpperCase();
 
 /* Registra a interação no Google Analytics e envia alerta para o WhatsApp (via api/notify.js) */
 function notify(acao) {
-  if (typeof gtag === 'function') gtag('event', 'chat_perolala', { acao });
+  if (typeof gtag === 'function') gtag('event', 'chat_pereola', { acao });
   if (!CONFIG.NOTIFY_URL) return;
   const body = JSON.stringify({ visitante, acao, pagina: location.pathname });
   try {
@@ -57,7 +57,7 @@ function disableChips() {
   });
 }
 
-/* Navega para um flow, exibindo a mensagem do usuário e a resposta da Perolala */
+/* Navega para um flow, exibindo a mensagem do usuário e a resposta da Pereola */
 function runFlow(id, label) {
   const f = flows[id];
   if (!f) return;
@@ -69,12 +69,12 @@ function runFlow(id, label) {
 /* Mensagem de boas-vindas ao abrir o chat */
 function startChat() {
   setTimeout(() => botMsg(
-    'Olá! Me chamo <strong>Perolala</strong>, a recepcionista digital do <strong>Instituto Danielle Azevedo</strong>. 💛<br><br>Estou aqui pra te acolher e te ajudar a dar o primeiro passo. Por onde começamos?',
+    'Olá! Me chamo <strong>Pereola</strong>, a recepcionista digital do <strong>Instituto Danielle Azevedo</strong>. 💛<br><br>Estou aqui pra te acolher e te ajudar a dar o primeiro passo. Por onde começamos?',
     flows.inicio.chips
   ), 450);
 }
 
-/* Renderiza mensagem da Perolala com indicador de digitação */
+/* Renderiza mensagem da Pereola com indicador de digitação */
 function botMsg(html, chips) {
   const a = document.getElementById('chat-area');
   if (!a) return;
@@ -92,7 +92,7 @@ function botMsg(html, chips) {
 
     const lbl = document.createElement('div');
     lbl.className = 'mlbl';
-    lbl.innerHTML = `<span class="mlbl-ava pero-p">IDA</span>Perolala · Instituto Danielle Azevedo`;
+    lbl.innerHTML = `<span class="mlbl-ava pero-p">IDA</span>Pereola · Instituto Danielle Azevedo`;
     a.appendChild(lbl);
 
     const msg = document.createElement('div');
