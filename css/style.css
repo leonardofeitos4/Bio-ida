@@ -252,17 +252,15 @@ body {
 }
 
 /* ===== IMAGENS DOS CARDS ===== */
-.card-numero {
-  background-image: url("../assets/instagram.svg");
+.card-banner {
+  height: auto;
+  aspect-ratio: 880 / 300;
 }
-.card-youtube {
-  background-image: url("../assets/youtub.svg");
-}
-.card-papovida {
-  background-image: url("../assets/spotfy.svg");
-}
-.card-instagram {
-  background-image: url("../assets/insta2.svg");
+.card-banner img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
 }
 .card-salas {
   background-image:
