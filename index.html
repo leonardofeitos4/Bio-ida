@@ -19,7 +19,7 @@
   <link rel="apple-touch-icon" href="assets/logoo.png">
 
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/chat.css">
+  <!-- <link rel="stylesheet" href="css/chat.css"> chatbot desativado -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <meta name="description" content="Instituto Danielle Azevedo – Clínica de terapias e desenvolvimento emocional em João Pessoa. Atendimento presencial e online.">
@@ -190,7 +190,9 @@ function initMap() {
 </a>
 
 
-<!-- ════════ PEREOLA · CHATBOT ════════ -->
+<!-- ════════ PEREOLA · CHATBOT (DESATIVADO) ════════
+     Para reativar: remova este comentário, o do fim do bloco
+     e descomente o link do css/chat.css no <head>.
 <button id="evo-launcher" class="evo-launcher" onclick="openEvo()" aria-label="Falar com a Pereola">
   <span class="pero-p" aria-hidden="true">IDA</span>
   <span class="evo-badge">1</span>
@@ -216,10 +218,11 @@ function initMap() {
   <div class="chat-area" id="chat-area"></div>
 </div>
 
-<!-- Scripts do chatbot (ordem de dependência) -->
+Scripts do chatbot (ordem de dependência)
 <script src="js/chatbot/config.js"></script>
 <script src="js/chatbot/flows.js"></script>
 <script src="js/chatbot/engine.js"></script>
+════════ FIM PEREOLA · CHATBOT ════════ -->
 <script src="js/script.js"></script>
 
 
