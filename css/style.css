@@ -152,12 +152,11 @@ body {
   box-shadow: var(--sombra-profile);
   z-index: 3;
 }
-.profile img {
+.profile-photo {
   width: 130px;
   height: 130px;
   border-radius: var(--borda-img);
-  object-fit: cover;
-  object-position: top center;
+  overflow: hidden;
   border: var(--borda-img-profile);
   position: absolute;
   top: -70px;
@@ -165,6 +164,16 @@ body {
   transform: translateX(-50%);
   background: var(--cor-branca);
   box-shadow: 0 0 0 2px rgba(201,164,95,.55), 0 10px 25px rgba(0,0,0,.18);
+}
+/* leve zoom ancorado à direita para centralizar o rosto */
+.profile-photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: top center;
+  transform: scale(1.15);
+  transform-origin: 100% 0;
 }
 .profile h1 {
   font-family: 'Playfair Display', var(--fonte-principal);
